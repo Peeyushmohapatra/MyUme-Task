@@ -1,0 +1,30 @@
+.navbar{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.navbar input{
+    height: 70%;
+    width: 20%;
+    border-radius: 8px;
+    padding: 0 5px;
+
+}
+.navbar a{
+    height: 70%;
+    width: 10%;
+    display: flex;
+}
+
+.navbar a button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
