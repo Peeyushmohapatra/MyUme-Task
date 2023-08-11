@@ -1,36 +1,27 @@
 import React, { useEffect } from "react";
-import Navbar from "./Components/Navbar/Navbar";
-import Posts from "./Components/Posts/Posts";
-import { useDispatch, useSelector } from "react-redux";
-import { getPosts } from "./Function/function";
-import {Routes,Route} from "react-router-dom"
-import Search from "./Components/Search/Search";
+import "./App.css"
+import {useDispatch, useSelector} from "react-redux"
+import { employees } from "./Essentials/functions";
+import Leftbox from "./Components/Left-Box/Leftbox";
+import Rightbox from "./Components/Right_Box/Rightbox";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const employee = useSelector((state) => {
+    return state.employee
+  })
 
-  const post = useSelector((state) => {
-    return state.post
-  });
-
-  const dispatch = useDispatch()
   useEffect(() => {
-    if(post.length === 0){
-      getPosts(dispatch)
+    if(employee.length === 0){
+      dispatch({
+        type:"employee_data",
+        payload:employees
+      })
     }
   },[dispatch])
-
-  const posts = useSelector((state) => {
-    return state.post
-  })
- 
-  return <div>
-    <Navbar/>
-
-    <Routes>
-      <Route path="/" element={<Posts posts={posts} data={"Please Wait Data To Load ..... "}/>} />
-      <Route path="/search" element={<Search/>} />
-    </Routes>
-    
+  return <div className="App_container">
+    <Leftbox/>
+    <Rightbox/>
   </div>;
 };
 

@@ -1,0 +1,23 @@
+.left_box{
+    height: 60%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px solid black;
+}
+
+.data_container{
+    width: 100%;
+    overflow-y: auto;
+}
+
+.employee_container{
+    padding: 0 70px;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 10px black;
+}

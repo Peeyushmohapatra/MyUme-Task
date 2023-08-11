@@ -1,15 +1,24 @@
-export const reducer = (state={post:[],searchResult:[]},action) => {
-    if(action.type === 'posts'){
+export const reducer = (state={employee:[],rightbox:[]},action) => {
+
+    if(action.type === "employee_data"){
         return {
             ...state,
-            post:action.payload
+            employee:action.payload
         }
     }
-    else if(action.type === "search-data"){
+    else if(action.type === "right_data"){
         return {
             ...state,
-            searchResult:action.payload
+            rightbox:[...state.rightbox,action.payload]
         }
     }
+
+    else if(action.type === "right_data_change"){
+        return {
+            ...state,
+            rightbox:action.payload
+        }
+    }
+   
     return state    
 }
